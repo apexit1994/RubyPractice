@@ -1,14 +1,25 @@
 require 'pdf-reader'
 
+class ReplyList
+    attr_accessor :reply, :user, :time_of_reply
+    def initialize( type, comments, username, time)
+        # local variables shadow the reader methods
+        @reply = reply
+        @user = user
+        @time_of_reply = time_of_reply
+    end    
+end
+
 class MarkupSummaryData
 
-    attr_accessor :type, :comments, :username, :time
-    def initialize( type, comments, username, time)
+    attr_accessor :type, :comments, :username, :time, :replies
+    def initialize( type, comments, username, time, replies)
         # local variables shadow the reader methods
         @type = type
         @comments = comments
         @username = username
         @time = time
+        @replies = replies
     end
 
     def getTotalNumberOfComments(markupSummary)
@@ -25,7 +36,7 @@ class MarkupSummaryData
 
     def getMarkupList(markupSummary)
 
-        index=0,id=1,type,comments="",username="",time
+        index=0,id=1,type,comments="",username="",time, markuplist=[]
         array=markupSummary.split("\s")
         $i=0;
         $length = array.length
@@ -59,21 +70,20 @@ class MarkupSummaryData
             end
             index+=1
             time = array[index]
-            puts type
-            puts comments
-            puts username
-            puts time
 
+            markuplist.push(MarkupSummaryData.new type, comments, username, time)
             index+=1
             id+=1
             type="",comments="",username="",time=""
         end
+
+        return markuplist
         
     end
 
     def extractPDFText
         #get Data from last page of document
-        file = '/home/adhandav/Downloads/CNT2677568.pdf'
+        file = '/home/adhandav/Downloads/CNT2677568 (2).pdf'
 
         if File.exist?(file)
             reader = PDF::Reader.new(file)
@@ -81,7 +91,15 @@ class MarkupSummaryData
             page   = reader.page(pc)
             data = page.text
             puts getTotalNumberOfComments(data)
-            getMarkupList(data)
+            datalist = getMarkupList(data)
+
+            for i in datalist
+                puts i.type
+                puts i.comments
+                puts i.username
+                puts i.time
+                puts ""
+            end
         else
             puts "File does not exists"
             
