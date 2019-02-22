@@ -1,25 +1,15 @@
 require 'pdf-reader'
 
-class ReplyList
-    attr_accessor :reply, :user, :time_of_reply
-    def initialize( type, comments, username, time)
-        # local variables shadow the reader methods
-        @reply = reply
-        @user = user
-        @time_of_reply = time_of_reply
-    end    
-end
 
 class MarkupSummaryData
 
-    attr_accessor :type, :comments, :username, :time, :replies
-    def initialize( type, comments, username, time, replies)
+    attr_accessor :type, :comments, :username, :time
+    def initialize( type, comments, username, time)
         # local variables shadow the reader methods
         @type = type
         @comments = comments
         @username = username
         @time = time
-        @replies = replies
     end
 
     def getTotalNumberOfComments(markupSummary)
