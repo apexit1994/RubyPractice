@@ -1,6 +1,5 @@
 require 'pdf-reader'
 
-
 class MarkupSummaryData
 
     attr_accessor :type, :comments, :username, :time
