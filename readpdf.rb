@@ -42,26 +42,26 @@ class MarkupSummaryData
     comments = username = ""
 
     while (array[index] != "-" && !array[index + 1].match(/M[rs]+[s]*/))
-      comments += array[index]
+      comments = comments + " " + array[index]
       index += 1
     end
 
     index += 1
 
     while (array[index] != "on")
-      username += array[index]
+      username = username + " " + array[index]
       index += 1
     end
     index += 1
     time = array[index]
 
-    return comments, username, time, index
+    return comments.lstrip, username.lstrip, time, index
 
   end
 
   def getMarkupList(markupSummary)
 
-    index = 0, id = 1, type, comments = "", username = "", time, markuplist = [], replies =[]
+    index = 0, id = 1, type, comments = "", username = "", time, markuplist = [], replies = []
     array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
@@ -90,15 +90,15 @@ class MarkupSummaryData
         while !array[index].match(/[0-9]+/)
           reply, reply_user, reply_time, index = getComments(array, index)
           replies.push(ReplyData.new reply, reply_user, reply_time)
-          index+=1
+          index += 1
         end
       end
 
       markuplist.push(MarkupSummaryData.new type, comments, username, time, replies)
 
       id += 1
-      type =  comments =  username = time = ""
-      replies =[]
+      type = comments = username = time = ""
+      replies = []
     end
 
     return markuplist
@@ -123,10 +123,10 @@ class MarkupSummaryData
         puts i.username
         puts i.time
         for j in i.replies
+          puts "------reply------"
           puts j.reply
           puts j.username
           puts j.time
-          puts "*****"
         end
 
         puts ""
