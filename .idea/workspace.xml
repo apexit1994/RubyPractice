@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0a6f97e-9ac1-412b-9fde-66ab4ea3f556" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/callanotherfile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/callanotherfile.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readpdf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/readpdf.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +21,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/callanotherfile.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
@@ -31,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readpdf.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="136" column="3" selection-start-line="136" selection-start-column="3" selection-end-line="136" selection-end-column="3" />
+            <state relative-caret-position="-20">
+              <caret line="105" column="84" selection-start-line="105" selection-start-column="84" selection-end-line="105" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -159,12 +158,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550749755726</updated>
       <workItem from="1550749757670" duration="11138000" />
-      <workItem from="1550829422953" duration="5263000" />
+      <workItem from="1550829422953" duration="5469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11260000" />
+    <option name="totallyTimeSpent" value="11466000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -184,7 +183,7 @@
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="2" sideWeight="0.49946293" visible="true" weight="0.32896304" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49946293" weight="0.32896304" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32896304" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50053704" side_tool="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -198,7 +197,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="4" visible="true" weight="0.5784103" />
+      <window_info anchor="right" id="Terminal" order="4" weight="0.5784103" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -206,7 +205,7 @@
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49946293" weight="0.32896304" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.49946293" visible="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32896304" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50053704" side_tool="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -285,17 +284,17 @@
     <entry file="file://$PROJECT_DIR$/textextractpdf.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/readpdf.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="105" column="84" selection-start-line="105" selection-start-column="84" selection-end-line="105" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/callanotherfile.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readpdf.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="136" column="3" selection-start-line="136" selection-start-column="3" selection-end-line="136" selection-end-column="3" />
         </state>
       </provider>
     </entry>

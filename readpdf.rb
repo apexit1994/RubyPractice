@@ -30,7 +30,7 @@ class MarkupFunctions
 
   attr_accessor :file
 
-  def initialize( file)
+  def initialize(file)
     # local variables shadow the reader methods
     @file = file
   end
@@ -71,7 +71,7 @@ class MarkupFunctions
 
   def getMarkupList(markupSummary)
 
-    index = 0, id = 1, type = comments = username = time ="", markuplist = [], replies = []
+    index = 0, id = 1, type = comments = username = time = "", markuplist = [], replies = []
     array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
@@ -103,21 +103,18 @@ class MarkupFunctions
           index += 1
         end
       end
-
       markuplist.push(MarkupSummaryData.new type, comments, username, time, replies)
-
       id += 1
       type = comments = username = time = ""
       replies = []
     end
 
     return markuplist
-
   end
 
   def extractPDFText
     #get Data from last page of document
-    file =@file
+    file = @file
 
     if File.exist?(file)
       reader = PDF::Reader.new(file)
@@ -130,8 +127,7 @@ class MarkupFunctions
       return datalist, totalcomments
     else
       puts "File does not exists"
-
     end
-  end
 
+  end
 end
