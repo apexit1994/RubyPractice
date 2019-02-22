@@ -1,15 +1,28 @@
 require 'pdf-reader'
 
+class ReplyData
+
+  attr_accessor :reply, :username, :time
+
+  def initialize(reply, username, time)
+    # local variables shadow the reader methods
+    @reply = reply
+    @username = username
+    @time = time
+  end
+end
+
 class MarkupSummaryData
 
-  attr_accessor :type, :comments, :username, :time
+  attr_accessor :type, :comments, :username, :time, :replies
 
-  def initialize(type, comments, username, time)
+  def initialize(type, comments, username, time, replies)
     # local variables shadow the reader methods
     @type = type
     @comments = comments
     @username = username
     @time = time
+    @replies = replies
   end
 
   def getTotalNumberOfComments(markupSummary)
@@ -48,7 +61,7 @@ class MarkupSummaryData
 
   def getMarkupList(markupSummary)
 
-    index = 0, id = 1, type, comments = "", username = "", time, markuplist = []
+    index = 0, id = 1, type, comments = "", username = "", time, markuplist = [], replies =[]
     array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
@@ -71,10 +84,21 @@ class MarkupSummaryData
 
       comments, username, time, index = getComments(array, index)
 
-      markuplist.push(MarkupSummaryData.new type, comments, username, time)
       index += 1
+
+      if array[index] != nil
+        while !array[index].match(/[0-9]+/)
+          reply, reply_user, reply_time, index = getComments(array, index)
+          replies.push(ReplyData.new reply, reply_user, reply_time)
+          index+=1
+        end
+      end
+
+      markuplist.push(MarkupSummaryData.new type, comments, username, time, replies)
+
       id += 1
-      type = "", comments = "", username = "", time = ""
+      type =  comments =  username = time = ""
+      replies =[]
     end
 
     return markuplist
@@ -98,6 +122,13 @@ class MarkupSummaryData
         puts i.comments
         puts i.username
         puts i.time
+        for j in i.replies
+          puts j.reply
+          puts j.username
+          puts j.time
+          puts "*****"
+        end
+
         puts ""
       end
     else
@@ -108,7 +139,7 @@ class MarkupSummaryData
 
 end
 
-obj = MarkupSummaryData.new 1, 2, 3, 4
+obj = MarkupSummaryData.new 1, 2, 3, 4, 5
 obj.extractPDFText
 
 
