@@ -24,6 +24,16 @@ class MarkupSummaryData
     @time = time
     @replies = replies
   end
+end
+
+class MarkupFunctions
+
+  attr_accessor :file
+
+  def initialize( file)
+    # local variables shadow the reader methods
+    @file = file
+  end
 
   def getTotalNumberOfComments(markupSummary)
     array = markupSummary.split("\s")
@@ -61,7 +71,7 @@ class MarkupSummaryData
 
   def getMarkupList(markupSummary)
 
-    index = 0, id = 1, type, comments = "", username = "", time, markuplist = [], replies = []
+    index = 0, id = 1, type = comments = username = time ="", markuplist = [], replies = []
     array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
@@ -107,30 +117,17 @@ class MarkupSummaryData
 
   def extractPDFText
     #get Data from last page of document
-    file = '/home/adhandav/Downloads/CNT2677568 (2).pdf'
+    file =@file
 
     if File.exist?(file)
       reader = PDF::Reader.new(file)
       pc = reader.page_count
       page = reader.page(pc)
       data = page.text
-      puts getTotalNumberOfComments(data)
+      totalcomments = getTotalNumberOfComments(data)
       datalist = getMarkupList(data)
 
-      for i in datalist
-        puts i.type
-        puts i.comments
-        puts i.username
-        puts i.time
-        for j in i.replies
-          puts "------reply------"
-          puts j.reply
-          puts j.username
-          puts j.time
-        end
-
-        puts ""
-      end
+      return datalist, totalcomments
     else
       puts "File does not exists"
 
@@ -138,9 +135,3 @@ class MarkupSummaryData
   end
 
 end
-
-obj = MarkupSummaryData.new 1, 2, 3, 4, 5
-obj.extractPDFText
-
-
-
