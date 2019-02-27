@@ -68,21 +68,18 @@ class MarkupFunctions
     $i+=4
 
     while (array[$i] != "Revision") && (array[$i + 1] != "Version") && (array[$i + 2] != "Title") do
-      project += array[$i]
+      project = project + " " + array[$i]
       $i+=1
     end
 
     $i+=3
 
     while (array[$i] != "ID") && (array[$i + 1] != "Type") && (array[$i + 2] != "Comments") do
-      revision_version_title += array[$i]
+      revision_version_title = revision_version_title + " " + array[$i]
       $i+=1
     end
-
-
     
-    return HeaderMetaData.new total_comments, doc_number, project, revision_version_title
-
+    return HeaderMetaData.new total_comments, doc_number, project.lstrip, revision_version_title.lstrip
 
   end
 
