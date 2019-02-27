@@ -3,7 +3,6 @@ require 'pdf-reader'
 class ReplyData
   attr_accessor :reply, :username, :time
   def initialize(reply, username, time)
-    # local variables shadow the reader methods
     @reply = reply
     @username = username
     @time = time
@@ -38,9 +37,8 @@ class MarkupFunctions
     @file = file
   end
 
-  def getHeaderMetaData(markupSummary)
+  def getHeaderMetaData(array)
     total_comments = doc_number = project = revision_version_title = ''
-    array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
     while (array[$i] != "Total") && (array[$i + 1] != "Comments:") do
@@ -88,9 +86,8 @@ class MarkupFunctions
     return comments.lstrip, username.lstrip, time, index
   end
 
-  def getMarkupList(markupSummary)
+  def getMarkupList(array)
     index = 0, id = 1, type = comments = username = time = "", markuplist = [], replies = []
-    array = markupSummary.split("\s")
     $i = 0;
     $length = array.length
     while $i < $length - 3 do
@@ -137,9 +134,10 @@ class MarkupFunctions
       reader = PDF::Reader.new(file)
       pc = reader.page_count
       page = reader.page(pc)
-      data = page.text
-      header_meta_data = getHeaderMetaData(data)
-      datalist = getMarkupList(data)
+      markupSummary = page.text
+      array = markupSummary.split("\s")
+      header_meta_data = getHeaderMetaData(array)
+      datalist = getMarkupList(array)
       return datalist, header_meta_data
     else
       puts "File does not exists"
