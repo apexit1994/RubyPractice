@@ -8,16 +8,16 @@ puts header_metadata.doc_number
 puts header_metadata.project
 puts header_metadata.revision_version_title
 
-# for i in datalist
-#   puts i.type
-#   puts i.comments
-#   puts i.username
-#   puts i.time
-#   for j in i.replies
-#     puts "------reply------"
-#     puts j.reply
-#     puts j.username
-#     puts j.time
-#   end
-#   puts ""
-# end
+for i in datalist
+  puts i.type
+  puts i.comments
+  puts i.username
+  puts i.time
+  for j in i.replies
+    puts "------reply------"
+    puts j.reply
+    puts j.username
+    puts j.time
+  end
+  puts ""
+end
