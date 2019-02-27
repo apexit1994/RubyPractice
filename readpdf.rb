@@ -12,6 +12,19 @@ class ReplyData
   end
 end
 
+class HeaderMetaData
+
+  attr_accessor :total_comments, :doc_number, :project, :revision_version_title
+
+  def initialize(total_comments, doc_number, project, revision_version_title)
+    # local variables shadow the reader methods
+    @total_comments = total_comments
+    @doc_number = doc_number
+    @project = project
+    @revision_version_title = revision_version_title
+  end
+end
+
 class MarkupSummaryData
 
   attr_accessor :type, :comments, :username, :time, :replies
@@ -35,16 +48,42 @@ class MarkupFunctions
     @file = file
   end
 
-  def getTotalNumberOfComments(markupSummary)
+  def getHeaderMetaData(markupSummary)
+
+    total_comments = doc_number = project = revision_version_title = ''
     array = markupSummary.split("\s")
+
     $i = 0;
     $length = array.length
-    while $i < $length - 3 do
-      if (array[$i] == "Total") && (array[$i + 1] == "Comments:")
-        return "Total Comments :" + array[$i + 2]
-      end
-      $i += 1
+    while (array[$i] != "Total") && (array[$i + 1] != "Comments:") do
+        $i+=1
+        total_comments = array[$i + 2]
     end
+
+    while (array[$i] != "Document") && (array[$i + 1] != "Number") && (array[$i + 2] != "Projects") do
+      $i+=1
+      doc_number = array[$i+3]
+    end
+    
+    $i+=4
+
+    while (array[$i] != "Revision") && (array[$i + 1] != "Version") && (array[$i + 2] != "Title") do
+      project += array[$i]
+      $i+=1
+    end
+
+    $i+=3
+
+    while (array[$i] != "ID") && (array[$i + 1] != "Type") && (array[$i + 2] != "Comments") do
+      revision_version_title += array[$i]
+      $i+=1
+    end
+
+
+    
+    return HeaderMetaData.new total_comments, doc_number, project, revision_version_title
+
+
   end
 
   def getComments(array, index)
@@ -121,10 +160,11 @@ class MarkupFunctions
       pc = reader.page_count
       page = reader.page(pc)
       data = page.text
-      totalcomments = getTotalNumberOfComments(data)
+      # totalcomments = getTotalNumberOfComments(data)
+      header_meta_data = getHeaderMetaData(data)
       datalist = getMarkupList(data)
 
-      return datalist, totalcomments
+      return datalist, header_meta_data
     else
       puts "File does not exists"
     end
