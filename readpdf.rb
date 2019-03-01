@@ -147,7 +147,6 @@ class MarkupFunctions
       end
 
       i= start_page_markup_summary
-
       while i<=pc
         page = reader.page(i)
         data += page.text
