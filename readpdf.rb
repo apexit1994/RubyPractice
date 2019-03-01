@@ -129,13 +129,31 @@ class MarkupFunctions
 
   def extractPDFText
     #get Data from last page of document
+    start_page_markup_summary =0
     file = @file
     if File.exist?(file)
       reader = PDF::Reader.new(file)
       pc = reader.page_count
-      page = reader.page(pc)
-      markupSummary = page.text
-      array = markupSummary.split("\s")
+      i=pc
+      while i > 0
+        page = reader.page(i)
+        data = page.text
+        array=data.split("\s")
+        if (array[0]=="Downloaded") && (array[1]=="by")   
+            start_page_markup_summary = i
+        end
+        i-=1 
+      end
+
+      i= start_page_markup_summary
+
+      while i<=pc
+        page = reader.page(i)
+        data += page.text
+        i+=1
+      end
+
+      array=data.split("\s")
       header_meta_data = getHeaderMetaData(array)
       datalist = getMarkupList(array)
       return datalist, header_meta_data
