@@ -2,6 +2,7 @@ require 'pdf-reader'
 
 class ReplyData
   attr_accessor :reply, :username, :time
+
   def initialize(reply, username, time)
     @reply = reply
     @username = username
@@ -11,6 +12,7 @@ end
 
 class HeaderMetaData
   attr_accessor :total_comments, :doc_number, :project, :revision_version_title
+
   def initialize(total_comments, doc_number, project, revision_version_title)
     @total_comments = total_comments
     @doc_number = doc_number
@@ -21,6 +23,7 @@ end
 
 class MarkupSummaryData
   attr_accessor :type, :comments, :username, :time, :replies
+
   def initialize(type, comments, username, time, replies)
     @type = type
     @comments = comments
@@ -33,6 +36,7 @@ end
 class MarkupFunctions
 
   attr_accessor :file
+
   def initialize(file)
     @file = file
   end
@@ -82,8 +86,8 @@ class MarkupFunctions
       index += 1
     end
     index += 1
-    time = array[index] + " " + array[index+1] + " " + array[index+2] + " " + array[index+3]
-    return comments.lstrip, username.lstrip, time, index+3
+    time = array[index] + " " + array[index + 1] + " " + array[index + 2] + " " + array[index + 3]
+    return comments.lstrip, username.lstrip, time, index + 3
   end
 
   def getMarkupList(array)
@@ -129,30 +133,30 @@ class MarkupFunctions
 
   def extractPDFText
     #get Data from last page of document
-    start_page_markup_summary =0
+    start_page_markup_summary = 0
     file = @file
     if File.exist?(file)
       reader = PDF::Reader.new(file)
       pc = reader.page_count
-      i=pc
-    
+      i = pc
+
       while i > 0
         page = reader.page(i)
         data = page.text
-        array=data.split("\s")
-        if (array[0]=="Downloaded") && (array[1]=="by")   
-            start_page_markup_summary = i
+        array = data.split("\s")
+        if (array[0] == "Downloaded") && (array[1] == "by")
+          start_page_markup_summary = i
         end
-        i-=1 
+        i -= 1
       end
 
-      i= start_page_markup_summary
-      while i<=pc
+      i = start_page_markup_summary
+      while i <= pc
         page = reader.page(i)
         data += page.text
-        i+=1
+        i += 1
       end
-      array=data.split("\s")
+      array = data.split("\s")
       header_meta_data = getHeaderMetaData(array)
       datalist = getMarkupList(array)
       return datalist, header_meta_data
