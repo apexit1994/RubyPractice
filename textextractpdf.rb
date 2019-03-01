@@ -9,7 +9,7 @@ file = '/home/adhandav/Downloads/pdf.pdf'
                 page = reader.page(pc)
                 data = page.text
                 array=data.split("\s")
-                if (array[0]=="Markup") && (array[1]=="Summary") && (array[2]=="Sheet")   
+                if (array.index("Markup").to_i+2) == (array.index("Summary").to_i+1) && (array.index("Sheet").to_i)  
                     puts pc
                 end
                 pc-=1 

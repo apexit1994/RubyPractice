@@ -144,7 +144,7 @@ class MarkupFunctions
         page = reader.page(i)
         data = page.text
         array = data.split("\s")
-        if (array[0] == "Downloaded") && (array[1] == "by")
+        if (array.index("Markup").to_i+2) == (array.index("Summary").to_i+1) && (array.index("Sheet").to_i)  
           start_page_markup_summary = i
         end
         i -= 1
