@@ -135,6 +135,7 @@ class MarkupFunctions
       reader = PDF::Reader.new(file)
       pc = reader.page_count
       i=pc
+      
       while i > 0
         page = reader.page(i)
         data = page.text
