@@ -82,8 +82,8 @@ class MarkupFunctions
       index += 1
     end
     index += 1
-    time = array[index]
-    return comments.lstrip, username.lstrip, time, index
+    time = array[index] + " " + array[index+1] + " " + array[index+2] + " " + array[index+3]
+    return comments.lstrip, username.lstrip, time, index+3
   end
 
   def getMarkupList(array)

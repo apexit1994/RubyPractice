@@ -1,17 +1,19 @@
 require 'pdf-reader'
 
-file = '/home/adhandav/Downloads/CNT2677568 (2).pdf'
+file = '/home/adhandav/Downloads/pdf.pdf'
 
         if File.exist?(file)
             reader = PDF::Reader.new(file)
             pc = reader.page_count
-            page   = reader.page(pc)
-            data = page.text
-
-            array=data.split("\s")
-
-            puts array
+            while pc > 0
+                page = reader.page(pc)
+                data = page.text
+                array=data.split("\s")
+                if (array[0]=="Markup") && (array[1]=="Summary") && (array[2]=="Sheet")   
+                    puts pc
+                end
+                pc-=1 
+            end
         else
             puts "File does not exists"
-            
         end

@@ -1,12 +1,15 @@
 require './readpdf'
 
-obj = MarkupFunctions.new '/home/adhandav/Downloads/CNT2677568 (2).pdf'
+obj = MarkupFunctions.new '/home/adhandav/Downloads/adobe_markup (2).pdf'
 datalist, header_metadata= obj.extractPDFText
 
-puts header_metadata.total_comments
-puts header_metadata.doc_number
-puts header_metadata.project
-puts header_metadata.revision_version_title
+puts "HEADER META DATA"
+puts "Total Comments: " + header_metadata.total_comments
+puts "Doc Number: " + header_metadata.doc_number
+puts "Project: " + header_metadata.project
+puts "REV VER TITLE\n" + header_metadata.revision_version_title
+
+puts "\n\n"
 
 for i in datalist
   puts i.type
