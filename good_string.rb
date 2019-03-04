@@ -31,3 +31,6 @@ end
 
 
 puts good_string "9989991000100110021003", 1
+puts good_string "141516", 1
+puts good_string "1233", 1
+puts good_string "123456789", 1

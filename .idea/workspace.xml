@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0a6f97e-9ac1-412b-9fde-66ab4ea3f556" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/callanotherfile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/callanotherfile.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readpdf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/readpdf.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/good_string.rb" beforeDir="false" afterPath="$PROJECT_DIR$/good_string.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/good_string.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="473">
+              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -169,12 +167,12 @@
       <workItem from="1551076094595" duration="617000" />
       <workItem from="1551264440835" duration="1554000" />
       <workItem from="1551420082590" duration="2287000" />
-      <workItem from="1551675467323" duration="9529000" />
+      <workItem from="1551675467323" duration="9757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25737000" />
+    <option name="totallyTimeSpent" value="25965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,7 +188,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.24973147" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.24973147" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -311,8 +309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/good_string.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="473">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
         </state>
       </provider>
     </entry>
