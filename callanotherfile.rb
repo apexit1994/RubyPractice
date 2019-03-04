@@ -1,6 +1,6 @@
 require './readpdf'
 
-obj = MarkupFunctions.new '/home/adhandav/Downloads/adobe_markup (2).pdf'
+obj = MarkupFunctions.new '/home/adhandav/Downloads/Contract Review Meetings Procedures.pdf'
 datalist, header_metadata= obj.extractPDFText
 
 puts "HEADER META DATA\n\n"

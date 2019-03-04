@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0a6f97e-9ac1-412b-9fde-66ab4ea3f556" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/callanotherfile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/callanotherfile.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readpdf.rb" beforeDir="false" afterPath="$PROJECT_DIR$/readpdf.rb" afterDir="false" />
     </list>
@@ -21,16 +22,25 @@
         <entry file="file://$PROJECT_DIR$/callanotherfile.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
-              <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+              <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readpdf.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="146" column="58" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/readpdf.rb">
+        <entry file="file://$PROJECT_DIR$/good_string.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="146" column="58" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+            <state relative-caret-position="480">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -53,10 +63,11 @@
         <option value="$PROJECT_DIR$/freesample.rb" />
         <option value="$PROJECT_DIR$/callanotherfile.rb" />
         <option value="$PROJECT_DIR$/readpdf.rb" />
+        <option value="$PROJECT_DIR$/good_string.rb" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="35" />
     <option name="width" value="950" />
     <option name="height" value="752" />
@@ -66,7 +77,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -78,6 +88,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,12 +168,13 @@
       <workItem from="1550829422953" duration="5753000" />
       <workItem from="1551076094595" duration="617000" />
       <workItem from="1551264440835" duration="1554000" />
-      <workItem from="1551420082590" duration="1602000" />
+      <workItem from="1551420082590" duration="2287000" />
+      <workItem from="1551675467323" duration="9529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15523000" />
+    <option name="totallyTimeSpent" value="25737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,7 +298,7 @@
     <entry file="file://$PROJECT_DIR$/callanotherfile.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
-          <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -294,6 +306,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="146" column="58" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/good_string.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="40" />
         </state>
       </provider>
     </entry>

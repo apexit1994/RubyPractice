@@ -146,6 +146,7 @@ class MarkupFunctions
         array = data.split("\s")
         if (array.index("Markup").to_i+2) == (array.index("Summary").to_i+1) && (array.index("Sheet").to_i)  
           start_page_markup_summary = i
+          break
         end
         i -= 1
       end
